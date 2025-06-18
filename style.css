@@ -1,0 +1,17 @@
+:root
+{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+canvas
+{
+	/* background-color: black; */
+	outline-width: 1px;
+	outline-style: dashed;
+	outline-color: red;
+	/* outline-offset: 1px; */
+	/* width: 640px; */
+	/* height: 480px; */
+}
