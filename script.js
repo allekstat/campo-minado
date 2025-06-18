@@ -30,25 +30,19 @@ document.addEventListener('DOMContentLoaded', function ()
 	}
 	function setup()
 	{
-		ctx.strokeStyle = '#000';
-		ctx.lineWidth = 10;
-		ctx.beginPath();
-		ctx.moveTo(width / 2, 0);
-		ctx.lineTo(width / 2, height);
-		ctx.stroke();
+		divisor_grid({divisao: 10});
+		marcar_x({x: 0, y: 0});
 	}
-	divisor_grid({divisao: 10});
-	marcar_x({x:0,y:0});
-	
+	function handle_click()
+	{
+		marcar_x({x: 10 * (event.offsetX - width / 20) / width, y: 10 * (event.offsetY - height / 20) / height})
+		// console.log(event);
+	}
+	canvas.addEventListener('click', handle_click);
 });
 function lock(count = 0, i = 0)
 {
 	while (count - i++);
-}
-function lock(milisegundos = 0)
-{
-	let i = 0;
-	while (milisegundos * 1000000 - i++);
 }
 function async (milisegundos)
 {
